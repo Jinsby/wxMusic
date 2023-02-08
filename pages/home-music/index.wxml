@@ -1,0 +1,85 @@
+<!--pages/home-music/index.wxml-->
+<scroll-view class="scroll-view" scroll-y="{{true}}">
+  <view class="box">
+    <!-- 搜索 -->
+    <van-search class="van-serch" bind:click-input="handleSearchClick" background="#f7f8fa" shape="round" input-align="center" disabled placeholder="请输入搜索关键词" />
+
+    <!-- 轮播图 -->
+    <swiper wx:if="{{banners.length>0}}" class="swiper" style="height:{{swiperHeight}}px" indicator-dots autoplay circular>
+      <block wx:for="{{banners}}" wx:key="bannerId">
+        <swiper-item class="swiper-item">
+          <image class="swiper-image" src="{{item.pic}}" alt="" mode="widthFix" bindload="handleSwiperImageLoaded" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+
+
+    <!-- 推荐歌曲 -->
+    <view class=" recommend-song" wx:if="{{recommendSongs.length>0}}">
+      <sear-header title="推荐歌曲" showIMG='true' bind:click="handleMoreClick"></sear-header>
+      <view class=" song-list">
+        <block wx:for="{{recommendSongs}}" wx:key="id">
+          <song-item-v1 item="{{item}}" bindtap="handleSongItemClick" data-index="{{index}}"></song-item-v1>
+        </block>
+      </view>
+    </view>
+
+    <!-- 歌单 -->
+    <song-menu-area hotMenuList="{{hotMenuList}}" title="热门歌单" wx:if="{{hotMenuList.length>0}}"></song-menu-area>
+    <song-menu-area hotMenuList="{{JpSongList}}" title="精品歌单" wx:if="{{JpSongList.length>0}}"></song-menu-area>
+
+
+    <!-- 巅峰榜 -->
+    <view>
+      <sear-header title="巅峰榜"></sear-header>
+      <view class="ranking-list">
+        <block wx:for="{{rankings}}" wx:key="index">
+          <ranking-area-item item="{{item}}" bindtap="handleRankingItemClick" data-idx="{{index}}">
+          </ranking-area-item>
+        </block>
+      </view>
+    </view>
+
+    <!-- 播放工具栏 -->
+    <view class="play-bar-pla" wx:if="{{currentSong.id}}">
+    </view>
+    <view class="play-bar" wx:if="{{currentSong.id}}" bindtap="handleToPlyer">
+      <image class="bg-image" src="{{currentSong.al.picUrl}}" mode="center" />
+      <view class="bg-covoer"></view>
+      <view class="left">
+        <image class="album album-anim" style="animation-play-state: {{playAnimState}};" src="{{currentSong.al.picUrl}}" mode="aspectFill" />
+        <view class="name">
+          {{currentLyricText ? currentLyricText:currentSong.name}}
+        </view>
+      </view>
+      <view class="right">
+        <!-- catchtap 阻止子元素执行父元素的行为 -->
+        <image class="icon play" catchtap="handlePlayBtnClick" src="../../assets/images/music/{{isPlaying?'pause':'play'}}_icon.png" mode="" />
+        <image class="icon list" catchtap="showPopup" src="../../assets/images/music/playlist_icon.png" mode="" />
+      </view>
+    </view>
+
+
+    <van-popup class="popup" z-index="999" show="{{ show}}" round position="bottom" custom-style="height: 70%" bind:close="onClose">
+      <view class="popup-list">
+        <view class="popup-title">
+          播放列表({{playListSongs.length}})首
+        </view>
+        <view class="item">
+          <block wx:for="{{playListSongs}}" wx:key="id">
+            <view class="popup-item">
+              <view class="info" bindtap="handlePlaySong" data-id="{{item.id}}" style="color: {{currentSong.id == item.id ?'#0f0':''}};">
+                <text class="name">{{item.name}}</text>
+                <text class="pop-ar" wx:if="{{item.ar[0].name.length>1}}"> - {{item.ar[0].name}}</text>
+              </view>
+              <image class="image" bindtap="handleDelListSong" data-id="{{item.id}}" src="/assets/images/icons/del.png" mode="" />
+            </view>
+          </block>
+        </view>
+
+      </view>
+    </van-popup>
+  </view>
+
+</scroll-view>

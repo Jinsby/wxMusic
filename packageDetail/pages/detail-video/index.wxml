@@ -1,0 +1,47 @@
+<!--pages/detail-video/index.wxml-->
+<nav-bar class="nav-bar" bind:click="handleBackClick"></nav-bar>
+
+<swiper vertical class="swiper" bindchange="handleChangeSwiperItem">
+  <!-- <block wx:for="{{MvUrls}}" wx:key="vid"> -->
+  <swiper-item class="swiper-item">
+    <view class="content">
+      <view class="vid" bindtap="stopVideo">
+        <image class="stopIcon" wx:if="{{isStop}}" src="/assets/images/icons/play.png" mode="aspectFit" />
+        <video class="video" id="playVideo" bindtimeupdate="getVideoCount" src="{{playInfo.playUrl.url}}" controls=""
+          referrer-policy="origin" autoplay />
+      </view>
+
+      <view class="info">
+        <view class="artist">
+          <image class="artist-img" src="/assets/images/icons/artist.png" mode="aspectFit" />
+          <text class="artist-name">{{playInfo.playMessage.artistName}}</text>
+        </view>
+        <view class="playName">
+          <text>{{playInfo.playMessage.name}} </text>
+          <image class="pulldow" src="/assets/images/icons/pullDow.png" mode="aspectFit" />
+        </view>
+        <view class="playCount">
+          {{playInfo.playMessage.playCount}}次播放 {{playInfo.playMessage.publishTime}}
+        </view>
+        <slider class="slider" bindchanging="changeCurrentIng" bindchange="changeCurrentTime" max="{{duration}}"
+          value="{{currentTime}}" block-size='12' selected-color="#ffffff" color="#343434"></slider>
+        <view class="bottom">
+          {{playInfo.playMessage.desc}}
+        </view>
+      </view>
+
+    </view>
+  </swiper-item>
+  <!-- </block> -->
+</swiper>
+
+
+<!-- <view>
+  
+
+  <view>
+    <view>
+      相关视频
+    </view>
+    <block wx:for="{{MvRelatedVideo}}" wx:key="vid">
+      <video-corr-list item="{{item}}"></video-corr-list>

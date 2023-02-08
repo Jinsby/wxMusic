@@ -1,0 +1,40 @@
+<!--pages/detail-search/index.wxml-->
+<van-search class="van-serch" bind:change="handleSearch" bind:search="handleSearchAction" value="{{searchValue}}" focus="true" background="#f7f7f7" shape="round" placeholder="{{hotKeywords[0].first}}" />
+
+<!-- 热门搜索 -->
+<view class="hot" wx:if="{{!searchValue.length && !searchResult.value}}">
+  <srea-header title="热门搜索"></srea-header>
+  <view class="hotkey">
+    <block wx:for="{{hotKeywords}}" wx:key="first">
+      <view class="tag" bindtap="handleTagItemClick" data-item="{{item.first}}">
+        {{item.first}}
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 搜索建议 -->
+<view class="suggest" wx:elif="{{searchResult.length && !searchSongResult.length}}">
+  <view class="title">
+    搜索"{{searchValue}}"
+  </view>
+  <view class="content">
+    <block wx:for="{{searchResultNodes}}" wx:key="id" wx:if="{{index < 10}}">
+      <view class="item" bindtap="handleSuggestItemClick" data-index="{{index}}">
+        <image class="icon" src="/assets/images/icons/search_icon.png" mode="widthFix" />
+        <!-- <text class="name">{{item.name}}</text> <text wx:if="{{item.artists[0].name.length>1}}"> - {{item.artists[0].name}}</text> -->
+        <rich-text nodes="{{item}}" />
+        <!-- <text wx:if="{{item.artists[0].name.length>1}}"> - {{item.artists[0].name}}</text> -->
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 搜索列表 -->
+<view class="songItem" wx:elif="{{searchSongResult.length}}">
+  <view class="list">
+    <block wx:for="{{searchSongResult}}" wx:key="id">
+      <song-item-v2  item="{{item}}" index="{{index+1}}"></song-item-v2>
+    </block>
+  </view>
+</view>

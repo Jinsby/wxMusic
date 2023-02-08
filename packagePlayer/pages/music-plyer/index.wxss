@@ -1,0 +1,220 @@
+/* pages/music-plyer/index.wxss */
+page {
+  color: #fff;
+}
+
+.bg-image,
+.bg-covoer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-covoer {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(30px);
+}
+
+
+/* 导航 */
+
+.tag {
+  display: flex;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.tag .divider {
+  padding: 0 10rpx;
+}
+
+.tag .active {
+  color: #fff;
+}
+
+/*  */
+
+
+/* 歌曲 */
+.music {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 60rpx 20rpx 60rpx;
+}
+
+.album {
+  display: flex;
+  flex: 5;
+  align-items: center;
+  position: relative;
+}
+
+.album .image {
+  width: 100%;
+  border-radius: 30rpx;
+}
+
+.info {
+  padding: 30rpx 0;
+}
+
+.info .title {
+  font-size: 50rpx;
+  font-weight: 700;
+  padding-bottom: 20rpx;
+}
+
+.subtitle {
+  color: #999;
+}
+
+.alias {
+  padding-top: 17rpx;
+}
+
+.lyric {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 37rpx;
+  color: #0f0;
+}
+
+.progress .slider {
+  margin: 0 0 18rpx 0;
+}
+
+.progress .time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+}
+
+.operation {
+  display: flex;
+  padding-bottom: 20rpx;
+}
+
+/* 操作css */
+.operation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 0 30rpx;
+}
+
+.operation .btn {
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0;
+}
+
+.operation .btn-mode {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.operation .btn-pause {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+/* 歌词分页 */
+
+.lyric-text {
+  margin: 0 60rpx;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.top .lyric-image .image {
+  width: 70px;
+}
+
+.top .lyric-name {
+  padding-left: 40rpx;
+}
+
+.top .lyric-name .top-name {
+  font-size: 47rpx;
+  font-weight: 500
+}
+
+.top .lyric-name .top-ar {
+  font-size: 34rpx;
+  color: #999;
+}
+
+
+.lyric-list {
+  height: 75%;
+  padding: 10rpx 0 50rpx 0;
+}
+
+
+.lyric-list .item {
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #989898;
+  font-size: 40rpx;
+}
+
+.bottom {
+  height: 50rpx;
+}
+
+.lyric-list .active {
+  color: #fff;
+  font-size: 47rpx;
+}
+
+
+/* 播放列表 */
+/* .popup {}
+
+.popup .popup-list {} */
+
+.popup .popup-title {
+  padding: 30rpx 30rpx;
+  font-size: 35rpx;
+  color: #000000;
+  font-weight: 600;
+}
+
+.popup .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup .popup-item {
+  border-top: 0.5px solid #d6d6d6;
+  padding: 25rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup .popup-item .Listinfo {
+  padding: 0 40rpx;
+  font-size: 30rpx;
+}
+
+.popup .popup-item .image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 40rpx;
+}
+
+.popup .pop-ar {
+  color: #9c9c9c;
+}

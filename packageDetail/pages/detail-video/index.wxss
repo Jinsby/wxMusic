@@ -1,0 +1,104 @@
+/* pages/detail-video/index.wxss */
+page {
+  background-color: rgb(2, 2, 2);
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar {
+  z-index: 9;
+}
+
+.swiper {
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.stopIcon {
+  position: absolute;
+  top: 500rpx;
+  left: 326rpx;
+  z-index: 9;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.content {
+  display: flex;
+}
+
+.vid {
+  width: 100vw;
+}
+
+.vid .video {
+  padding-top: 40vh;
+  width: 100vw;
+}
+
+.info {
+  position: absolute;
+  bottom: 300rpx;
+  color: aliceblue;
+  z-index: 2;
+}
+
+.artist {
+  display: flex;
+  align-items: center;
+  padding: 0 35rpx;
+}
+
+.playName,
+.playCount,
+.bottom {
+  padding: 0 35rpx;
+}
+
+.playName,
+.playCount {
+  padding-top: 20rpx;
+}
+
+.playCount {
+  font-size: 27rpx;
+  color: #b9b9b9;
+}
+
+.playName {
+  display: flex;
+  align-items: center;
+}
+
+.pulldow {
+  margin-left: 15rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.bottom {
+  height: 50rpx;
+  overflow: hidden;
+}
+
+.artist .artist-name {
+  margin-left: 15rpx;
+}
+
+.artist .artist-img {
+  width: 40px;
+  height: 40px;
+}
+
+.slider {
+  width: 100vw;
+}
+
+slider {
+  margin: 10px 0;
+}
+
+.wx-slider-thumb {
+  display: none;
+}

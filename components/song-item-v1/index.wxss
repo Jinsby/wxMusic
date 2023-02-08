@@ -1,0 +1,42 @@
+/* components/song-item-v1/index.wxss */
+.item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.content {
+  padding-left: 15rpx;
+  flex: 1;
+}
+
+.content .name {
+  padding-bottom: 16rpx;
+}
+
+.content .source {
+  color: #a19fa0;
+  font-size: 27rpx;
+}
+
+.image {
+  width: 120rpx;
+  height: 120rxp;
+  border-radius: 15rpx;
+}
+
+.arrow .icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.source {
+  display: flex;
+  align-items: center;
+}
+
+.source .vipIcon {
+  width: 38rpx;
+  height: 38rpx;
+  padding-right: 10rpx;
+}

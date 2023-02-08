@@ -1,0 +1,16 @@
+/* components/srea-header/index.wxss */
+.header {
+  padding: 17rpx 25rpx;
+}
+
+.headline {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 50rpx;
+  margin: 4rpx 0 0 -10rpx;
+
+}

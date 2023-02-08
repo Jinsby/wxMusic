@@ -1,0 +1,16 @@
+<!--components/song-item-v2/index.wxml-->
+<view class="item" bindtap="handleSongItemClick" data-index="{{index}}" item="{{item}}">
+  <view class="index">
+    {{index}}
+  </view>
+  <view class="info">
+    <view class="name">
+      {{item.name}}
+    </view>
+    <view class="artists">
+      <image class="icon" wx:if="{{item.fee == 1}}" src="/assets/images/icons/vip.png" mode="widthFix" />
+      <image class="icon" wx:if="{{item.sq}}" src="/assets/images/icons/sq_icon.png" mode="widthFix" />
+      <text class="artists">{{item.artists[0].name}}</text><text class="album" wx:if="{{item.album.name.length>1}}"> - {{item.album.name}}</text>
+    </view>
+  </view>
+</view>

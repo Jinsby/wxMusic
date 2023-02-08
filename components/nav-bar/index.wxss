@@ -1,0 +1,46 @@
+/* components/nav-bar/index.wxss */
+.nav {
+  padding-bottom: 20rpx;
+}
+
+.nav-bar {
+  display: flex;
+  height: 44px;
+  text-align: center;
+}
+
+.left,
+.right {
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left .left-arrow .icon {
+  width: 46rpx;
+  display: block;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-arrow {
+  display: none;
+}
+
+.left-slot:empty+.left-arrow {
+  display: block;
+}
+
+.center-title {
+  display: none;
+}
+
+.center-slot:empty+.center-title {
+  display: block;
+}

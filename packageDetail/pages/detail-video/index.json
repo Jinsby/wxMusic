@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "video-corr-list":"/components/video-corr-list/index",
+    "nav-bar":"/components/nav-bar/index"
+  },
+  "navigationStyle": "custom"
+}

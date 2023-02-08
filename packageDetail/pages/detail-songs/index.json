@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "srea-header": "/components/srea-header",
+    "song-list":"/components/song-list",
+    "song-detail-header":"/components/song-detail-header"
+  }
+}

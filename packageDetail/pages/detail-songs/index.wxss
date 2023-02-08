@@ -1,0 +1,9 @@
+/* pages/detail-songs/index.wxss */
+.header {
+  font-size: 40rpx;
+}
+
+.song-list {
+  padding-left: 10rpx;
+  padding-top: 17rpx;
+}

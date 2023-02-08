@@ -1,0 +1,77 @@
+/* components/ranking-area-item/index.wxss */
+.ranking-area-item {
+  padding: 10rpx 25rpx;
+}
+
+.item {
+  height: 115px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 18rpx;
+  background-color: #f0eeef;
+}
+
+.left {
+  padding: 20rpx 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 210px
+}
+
+.left .item-name {
+  font-size: 35rpx;
+  font-weight: 600
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.info .text {
+  font-size: 28rpx;
+  white-space: nowrap;
+}
+
+.song {
+  color: #565455;
+}
+
+
+.song-author {
+  color: #b0aeaf;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+
+.right {
+  position: relative;
+  width: 115px;
+}
+
+.image {
+  width: 100%;
+  background-size: cover;
+  border-top-right-radius: 14rpx;
+  border-bottom-right-radius: 14rpx;
+}
+
+.playCount {
+  color: #fff;
+  background-color: #404042;
+  opacity: 0.8;
+  font-size: 22rpx;
+  padding: 8rpx 12rpx;
+  border-radius: 14rpx;
+  position: absolute;
+  right: 6rpx;
+  bottom: 7rpx;
+}
+
+.songname {
+  max-width: 210px
+}

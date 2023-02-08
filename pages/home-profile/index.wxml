@@ -1,0 +1,22 @@
+<!--pages/home-profile/index.wxml-->
+<form bindsubmit="submit">
+  <input type="text" name="phone" bindinput="bindKeyInput" placeholder="这是一个输入框" />
+  <button bindtap="toPhone">发送验证码</button>
+  <input type="text" name="captcha" placeholder="这是一个输入框" />
+  <button style="margin: 30rpx 0" type="primary" form-type="submit">手机登录</button>
+</form>
+
+<button bindtap="loginKey">生成二维码</button>
+<image wx:if="{{qrimg}}" src="{{qrimg}}" mode="aspectFit" />
+<button bindtap="loginQrCheck">检测二维码状态</button>
+
+<view wx:if="{{userInfos}}">
+<image src="{{userInfos.profile.avatarUrl}}" mode="aspectFit"/>
+  欢迎{{userInfos.profile.name}} - {{userInfos.profile.signature}}
+</view>
+
+<button open-type="getUserInfo" bindgetuserinfo="handleGetInfo">匿名获取用户信息</button>
+<button open-type="getUserInfo" bindtap="handleGetUserInfo">获取用户信息</button>
+<button open-type="getPhoneNumber" bindgetphonenumber="handleGetUserPhone">获取用户手机</button>
+<image src="{{userInfo.avatarUrl}}" mode="" />
+<text>欢迎{{userInfo.nickName}}</text>

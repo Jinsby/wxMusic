@@ -1,0 +1,52 @@
+<!--components/song-menu-item-v2/index.wxml-->
+<wxs src="../../utils/format.wxs" module="format" />
+<view class="header">
+  <image class="bg-image" src="{{songInfo.coverImgUrl}}" mode="aspectFill" />
+  <view class="bg-cover">
+  </view>
+  <view class="content">
+    <view class="left">
+      <text class="playCount">{{format.formatCount(songInfo.playCount)}}</text>
+      <image class="content-bg" src="{{songInfo.coverImgUrl}}" mode="aspectFill" />
+    </view>
+    <view class="info">
+      <view class="title">
+        {{songInfo.name}}
+      </view>
+      <view class="creator">
+        <image class="creatorImg" src="{{songInfo.creator.avatarUrl}}" mode="" />
+        <text class="inckname">{{songInfo.creator.nickname}}</text>
+      </view>
+      <view class="tags">
+        <block wx:for="{{songInfo.tags}}" wx:key="index">
+          <view class="tagsItem">
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="description">
+    {{songInfo.description}}
+  </view>
+  <view class="menu">
+    <view class="menu-list">
+      <image class="icon" src="../../assets/images/icons/shareCount.png" mode="heightFix" />
+      <view>
+        {{songInfo.shareCount}}
+      </view>
+    </view>
+    <view class="menu-list">
+      <image class="icon" src="../../assets/images/icons/commentCount.png" mode="heightFix" />
+      <view>
+        {{songInfo.commentCount}}
+      </view>
+    </view>
+    <view class="menu-list">
+      <image class="icon" src="../../assets/images/icons/subscribedCount.png" mode="heightFix" />
+      <view>
+        {{songInfo.subscribedCount}}
+      </view>
+    </view>
+  </view>
+</view>

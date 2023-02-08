@@ -1,0 +1,28 @@
+/* components/song-item-v2/index.wxss */
+.item {
+  padding: 14rpx 20rpx;
+  border-bottom: 1px #ececee solid;
+  display: flex;
+}
+
+.item .index {
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.artists text {
+  color: #6a6a6a;
+  font-size: 13px;
+}
+
+.artists {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 38rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}

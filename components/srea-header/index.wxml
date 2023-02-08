@@ -1,0 +1,9 @@
+<!--components/srea-header/index.wxml-->
+<view class="header">
+  <view class="headline" bindtap="handleClick">
+    <text>{{title}}</text>
+    <block wx:if="{{showIMG}}">
+      <image class="icon" src="/assets/images/icons/arrow-right.png" mode="widthFix" />
+    </block>
+  </view>
+</view>
